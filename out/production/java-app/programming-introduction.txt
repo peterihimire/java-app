@@ -1,0 +1,214 @@
+***THE FETCH AND EXECUTE CYCLE : MACHINE LANGUAGE
+*COMPUTER
+A computer is a complex system consisting of many different components. But at the
+heart—or the brain, if you want—of the computer is a single component that does the actual
+computing. This is the Central Processing Unit, or CPU.
+
+A computer system consisting of many devices is typically organized by connecting those
+devices to one or more busses. A bus is a set of wires that carry various sorts of information
+between the devices connected to those wires. The wires carry data, addresses, and control
+signals. An address directs the data to a particular device and perhaps to a particular register
+or location within that device. Control signals can be used, for example, by one device to alert
+another that data is available for it on the data bus.
+
+*PROGRAM
+program is simply a list of unambiguous instructions meant to be followed mechanically
+by a computer. 
+
+A program is a sequence of instructions. In the ordinary “flow of control,” the computer
+executes the instructions in the sequence in which they occur in the program, one after the
+other. However, this is obviously very limited: the computer would soon run out of instructions
+to execute.
+
+**MACHINE LANGUAGE
+A computer is built to carry out instructions that are written in a very simple
+type of language called machine language.
+
+A computer executes machine language programs mechanically—that is without understanding them or thinking about them—simply because of the way it is physically put together.
+
+Machine language instructions are expressed as binary numbers. A binary number is made
+up of just two possible digits, zero and one. Each zero or one is called a bit. So, a machine
+language instruction is just a sequence of zeros and ones. Each particular sequence encodes
+some particular instruction. The data that the computer manipulates is also encoded as binary
+numbers. In modern computers, each memory location holds a byte, which is a sequence of
+eight bits. (A machine language instruction or a piece of data generally consists of several bytes,
+stored in consecutive memory locations.)
+
+*RAM
+When the CPU executes a program, that program is stored in the computer’s main memory (also called the RAM or random access memory). In addition to the program, memory
+can also hold data that is being used or processed by the program. Main memory consists of a
+sequence of locations. These locations are numbered, and the sequence number of a location
+is called its address.
+
+***ASYNCHRONOUS EVENTS: POLLING LOOPS AND INTERRUPTS
+POLLINGS
+How does the CPU know that the data is there? One simple idea,
+which turns out to be not very satisfactory, is for the CPU to keep checking for incoming data
+over and over. Whenever it finds data, it processes it. This method is called polling, since
+the CPU polls the input devices continually to see whether they have any input data to report.
+Unfortunately, although polling is very simple, it is also very inefficient.
+
+INTERRUPTS
+To avoid this inefficiency, interrupts are generally used instead of polling. An interrupt is a signal sent by another device to the CPU. The CPU responds to an interrupt signal by putting aside whatever it is doing in order to respond to the interrupt. Once it has handled the interrupt, it returns to what it was doing before the interrupt occurred.
+
+Interrupts allow the CPU to deal with asynchronous events. In the regular fetch-andexecute cycle, things happen in a predetermined order; everything that happens is “synchronized” with everything else. Interrupts make it possible for the CPU to deal efficiently with
+events that happen “asynchronously,” that is, at unpredictable times
+THREAD
+Each of the individual tasks that the CPU is working on is called a thread. (Or a process; there are technical differences between threads and processes, but they are not important here,
+since it is threads that are used in Java.)
+
+Many CPUs can literally execute more than one
+thread simultaneously—such CPUs contain multiple “cores,” each of which can run a thread—
+but there is always a limit on the number of threads that can be executed at the same time.
+
+OPERATING SYSTEM
+Operating system is the software that does all the interrupt handling, handles communication with
+the user and with hardware devices, and controls which thread is allowed to run.
+
+The operating system is the basic, essential software without which a
+computer would not be able to function. Other programs, such as word processors and Web
+browsers, are dependent upon the operating system. Common operating systems include Linux,
+various versions of Windows, and Mac OS.
+
+***THE JAVA VIRTUAL MACHINE
+Machine language consists of very simple instructions that can be executed directly by
+the CPU of a computer. Almost all programs, though, are written in high-level programming
+languages such as Java, Fortran, or C++.
+*COMPILER
+A program written in a high-level language cannotbe run directly on any computer. First, it has to be translated into machine language. This translation can be done by a program called a compiler.
+
+A compiler takes a high-level-language
+program and translates it into an executable machine-language program. Once the translation
+is done, the machine-language program can be run any number of times, but of course it can only
+be run on one type of computer (since each type of computer has its own individual machine
+language). If the program is to run on another type of computer it has to be re-translated,
+using a different compiler, into the appropriate machine language.
+
+*INTERPRETER
+There is an alternative to compiling a high-level language program. Instead of using a
+compiler, which translates the program all at once, you can use an interpreter, which translates
+it instruction-by-instruction, as necessary.
+
+In order to execute a program, the interpreter
+runs in a loop in which it repeatedly reads one instruction from the program, decides what is
+necessary to carry out that instruction, and then performs the appropriate machine-languag command to do so.
+
+One use of interpreters is to execute high-level language programs. For example, the programming language Lisp is usually executed by an interpreter rather than a compiler. However,
+interpreters have another purpose: they can let you use a machine-language program meant
+for one type of computer on a completely different type of computer.
+
+The designers of Java chose to use a combination of compilation and interpreting. Programs written in Java are compiled into machine language, but it is a machine language for
+a computer that doesn’t really exist. This so-called “virtual” computer is known as the Java
+Virtual Machine, or JVM.
+
+The machine language for the Java Virtual Machine is called Java
+bytecode. There is no reason why Java bytecode couldn’t be used as the machine language of a
+real computer, rather than a virtual computer.
+
+But in fact the use of a virtual machine makes
+possible one of the main selling points of Java: the fact that it can actually be used on any
+computer. All that the computer needs is an interpreter for Java bytecode. 
+(The term JVM is also used for the Java bytecode interpreter program that does the simulation,
+so we say that a computer needs a JVM in order to run Java programs. Technically, it would
+be more correct to say that the interpreter implements the JVM than to say that it is a JVM.)
+
+Of course, a different Java bytecode interpreter is needed for each type of computer, but
+once a computer has a Java bytecode interpreter, it can run any Java bytecode program, and
+the same program can be run on any computer that has such an interpreter. This is one of the
+essential features of Java: the same compiled program can be run on many different types of
+computers
+
+Why, you might wonder, use the intermediate Java bytecode at all? Why not just distribute
+the original Java program and let each person compile it into the machine language of whatever
+computer they want to run it on? There are several reasons. First of all, a compiler has to
+understand Java, a complex high-level language. The compiler is itself a complex program.
+A Java bytecode interpreter, on the other hand, is a relatively small, simple program. This
+makes it easy to write a bytecode interpreter for a new type of computer; once that is done,
+that computer can run any compiled Java program. It would be much harder to write a Java
+compiler for the same computer.
+
+The bytecode interpreter acts as a buffer between you and the
+program you download. You are really running the interpreter, which runs the downloaded
+program indirectly. The interpreter can protect you from potentially dangerous actions on the
+part of that program.
+
+JUST-IN-TIME COMPILER
+
+When Java was still a new language, it was criticized for being slow: Since Java bytecode was executed by an interpreter, it seemed that Java bytecode programs could never run as quickly as programs compiled into native machine language (that is, the actual machine language of the computer on which the program is running). However, this problem has been largely overcome by the use of just-in-time compilers for executing Java bytecode
+
+A just-in-time compiler translates Java bytecode into native machine language. It does this while it is executing the program. Just as for a normal interpreter, the input to a just-in-time compiler is a Java bytecode program, and its task is to execute that program. But as it is executing the program, it also translates parts of it into machine language. The translated parts of the program can then be executed much more quickly than they could be interpreted. Since a given part of a program is often executed many times as the program runs, a just-in-time compiler can significantly speed up the overall execution time.
+
+A program written in Java could certainly be compiled into the machine language of a real computer. And programs written in other languages can be compiled into Java bytecode. However,
+the combination of Java and Java bytecode is platform-independent, secure, and network-compatible while allowing you to program in a modern high-level object-oriented language
+
+(In the past few years, it has become fairly common to create new programming languages,
+or versions of old languages, that compile into Java bytecode. The compiled bytecode programs
+can then be executed by a standard JVM. New languages that have been developed specifically
+for programming the JVM include Groovy, Clojure, and Processing. Jython and JRuby are
+versions of older languages, Python and Ruby, that target the JVM. These languages make it
+possible to enjoy many of the advantages of the JVM while avoiding some of the technicalities
+of the Java language. In fact, the use of other languages with the JVM has become important
+enough that several new features have been added to the JVM specifically to add better support
+for some of those languages. And this impro
+
+
+
+***FUNDAMENTAL BUILDING BLOCKS OF PROGRAMS
+There are two basic aspects of programming: data and instructions. To work with
+data, you need to understand variables and types; to work with instructions, you need to
+understand control structures and subroutines.
+
+VARIABLE
+variable is just a memory location (or several consecutive locations treated as a unit)
+that has been given a name so that it can be easily referred to and used in a program. The
+programmer only has to worry about the name; it is the compiler’s responsibility to keep track
+of the memory location.
+
+It refers to a kind of “box” in memory that can hold data, even though you don’t have to know where in
+memory that box is located.
+
+TYPE
+In Java and in many other programming languages, a variable has a type that indicates
+what sort of data it can hold. One type of variable might hold integers—whole numbers such as
+3, -7, and 0—while another holds floating point numbers—numbers with decimal points such as
+3.14, -2.7, or 17.0. (Yes, the computer does make a distinction between the integer 17 and the
+floating-point number 17.0; they actually look quite different inside the computer.) There could
+also be types for individual characters (’A’, ’;’, etc.), strings (“Hello”, “A string can include
+many characters”, etc.), and less common types such as dates, colors, sounds, or any other kind
+of data that a program might need to store.
+
+CONTROL STRUCTURE
+Control structures are special instructions that can change the flow of control.
+There are two basic types of control structure: loops, which allow a sequence of instructions
+to be repeated over and over, and branches, which allow the computer to decide between two
+or more different courses of action by testing conditions that occur as the program is running
+
+if (principal > 10000)
+interest = principal * 0.05;
+else
+interest = principal * 0.04;
+
+LOOPS
+Loops are used when the same task has to be performed more than once. For example,
+if you want to print out a mailing label for each name on a mailing list, you might say, “Get
+the first name and address and print the label; get the second name and address and print
+the label; get the third name and address and print the label. . . ” But this quickly becomes
+ridiculous—and might not work at all if you don’t know in advance how many names there are.
+What you would like to say is something like “While there are more names to process, get the next name and address, and print the label.” A loop can be used in a program to express such
+repetition.
+
+SOUBROUTINE
+A subroutine consists of the instructions for performing some task, grouped together
+as a unit and given a name. That name can then be used as a substitute for the whole set of
+instructions. For example, suppose that one of the tasks that your program needs to perform
+is to draw a house on the screen. You can take the necessary instructions, make them into
+a subroutine, and give that subroutine some appropriate name—say, “drawHouse()”.
+
+A subroutine becomes just like a built-in part of the language which
+you can use without thinking about the details of what goes on “inside” the subroutine.
+
+Variables, types, loops, branches, and subroutines are the basis of what might be called
+“traditional programming.” However, as programs become larger, additional structure is needed
+to help deal with their complexity. One of the most effective tools that has been found is object oriented programming.
+
+OBJECTS AND OBJECT ORIENTED PROGRAMMING

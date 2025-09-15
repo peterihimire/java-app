@@ -1,0 +1,18 @@
+To confirm your java compiler version => javac --version
+To compile a code in java => javac JavaBasic.java
+To run/execut the code => java JavaBasic 
+
+In our machine/computer we have JVM. Now the reason Java is platform independent is because irrespective of the OS or machine it will run java programs and JVM has to be installed. JVM runs inside of an OS, which runs inside of a hardware. However JVM is platform dependent because it has to be built for a particular OS, Mac, Windows, Linux etc. JVM cannot run the Java code directly, instead it has to be converted to a machine language or byte code. Meaning tha JVM accepts byte code. That means that our java code will have to be compiled into machine code (byte(1,0)) then JVM can be able to read and understand to data. That compiler is called "Javac".
+Out of all the java files, we will need to provide JVM with the entry file to execute, and that entry file must contain the "main" method. JVM will look for the main method to finally execute the program.
+
+Now when you compile the below code inside of JavaBasic.java file :
+
+public class JavaBasic
+{
+  public static void main(String[] args)
+  {
+    System.out.println("Hello World");
+  }
+}
+
+A corresponding JavaBasic.class file is generated, that is the machine or byte code that JVM understands. The extension for byte code is .class, while for the java code is the .java extension.
