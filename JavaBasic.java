@@ -198,12 +198,21 @@ ridiculous—and might not work at all if you don’t know in advance how many n
 What you would like to say is something like “While there are more names to process, get the next name and address, and print the label.” A loop can be used in a program to express such
 repetition.
 
+SOUBROUTINE
+A subroutine consists of the instructions for performing some task, grouped together
+as a unit and given a name. That name can then be used as a substitute for the whole set of
+instructions. For example, suppose that one of the tasks that your program needs to perform
+is to draw a house on the screen. You can take the necessary instructions, make them into
+a subroutine, and give that subroutine some appropriate name—say, “drawHouse()”.
 
+A subroutine becomes just like a built-in part of the language which
+you can use without thinking about the details of what goes on “inside” the subroutine.
 
+Variables, types, loops, branches, and subroutines are the basis of what might be called
+“traditional programming.” However, as programs become larger, additional structure is needed
+to help deal with their complexity. One of the most effective tools that has been found is object oriented programming.
 
-
-
-
+OBJECTS AND OBJECT ORIENTED PROGRAMMING 
 */
 
 public class JavaBasic
