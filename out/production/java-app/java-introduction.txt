@@ -1,8 +1,11 @@
+To open the javashell => javashell
+To close the javashell => /exit
 To confirm your java compiler version => javac --version
-To compile a code in java => javac   JavaBasic.java
-To run the code => java JavaBasic
+To compile a code in java => javac JavaBasic.java
+To run/execute the compiled code => java JavaBasic
+To do it in one step, compile and run the code => java JavaBasic.java
 
-In our maching we have JVM. Now the reason Java is platform independent is because irrespective of the OS or machine it will run java programs and JVM has to be installed. JVM runs inside of an OS, which runs inside of a hardware. However JVM is platform dependent because it has to be built for a particular OS, Mac, Windows, Linux etc. JVM cannot run the Java code directly, instead it has to be converted to a machine language or byte code. Meaning tha JVM accepts byte code. That means that our java code will have to be compiled into machine code (byte(1,0)) then JVM can be able to read and understand to data. That compiler is called "Javac".
+In our machine/computer we have JVM. Now the reason Java is platform independent is because irrespective of the OS or machine it will run java programs and JVM has to be installed. JVM runs inside of an OS, which runs inside of a hardware. However JVM is platform dependent because it has to be built for a particular OS, Mac, Windows, Linux etc. JVM cannot run the Java code directly, instead it has to be converted to a machine language or byte code. Meaning tha JVM accepts byte code. That means that our java code will have to be compiled into machine code (byte(1,0)) then JVM can be able to read and understand to data. That compiler is called "Javac".
 Out of all the java files, we will need to provide JVM with the entry file to execute, and that entry file must contain the "main" method. JVM will look for the main method to finally execute the program.
 
 Now when you compile the below code inside of JavaBasic.java file :
@@ -15,4 +18,20 @@ public class JavaBasic
   }
 }
 
-A corresponding JavaBasic.class file is generated, that is the machine or byte code that JVM understands. The extension for byte code is .class, while for the java code is the .java extension.
+A corresponding JavaBasic.class file is generated, that is the machine or byte code that JVM understands. The extension for byte code is [.class], while for the java code is the [.java] extension. This is the flow, as a programmer you will create a Java file, then compile it then the code becomes a byte code which can not execute inside of the JVM, then JVM will look for the file with [public static void main(String[] args)] and we will get the output. 
+
+Another thing to note is that JVM(Java Virtual Machine) is encapsulated inside JRE(Java RunTime Environment). JVM is part of JRE. Whenever we execute a java code it runs inside a JRE. Now here is the flow. JDK contains JRE which contains JVM. Java is WORA(Write Once Run Anywhere).When you install a JDK it comes with the corresponding JRE and JVM. One does not need to have a JDK in there machine in order to run java.
+
+VARIABLE
+We store data parmenently in the database, but temporarily we can store it as a variable. And since java is strongly typed we also need to provide the variable type, is it a number, string or boolean.
+
+DATA TYPE
+In java we have two types of datatypes types 
+(1)Primitive and 
+(2)Non Primitive
+
+And primitive is divided into 4 categories : 
+Integer => [byte => 1 byte , short => 2 bytes, int => 4 bytes, long => 8 bytes : 78, 10] Example : int num = 20;
+Float => double => [8 bytes, float => 4 bytes : 5.2, [5.2f = How to explicitly define a float, cause by default it takes on a double]] Example : double num = 5.6;, float num = 5.6f;
+Character => [2 bytes[support UNICODE not ASCII], [It has to be wrapped up in a single quote and can only accept a single character]] Example : char c = 'o';
+Boolean => [true or false [Unlike some other language that accept 0 or 1 for boolean, in Java its not like that, boolean is either true or false period]] Example : boolean b = true;
