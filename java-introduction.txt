@@ -35,3 +35,7 @@ Integer => [byte => 1 byte , short => 2 bytes, int => 4 bytes, long => 8 bytes :
 Float => double => [8 bytes, float => 4 bytes : 5.2, [5.2f = How to explicitly define a float, cause by default it takes on a double]] Example : double num = 5.6;, float num = 5.6f;
 Character => [2 bytes[support UNICODE not ASCII], [It has to be wrapped up in a single quote and can only accept a single character]] Example : char c = 'o';
 Boolean => [true or false [Unlike some other language that accept 0 or 1 for boolean, in Java its not like that, boolean is either true or false period]] Example : boolean b = true;
+
+JDK = Java Development Kit = When we install JDK in our systems, it comes with updated JVM and updated JRE. On a client machine, we have the JVM and JRE to execute the code.
+JVM = Java Virtual Machine = Where the code is executed
+JRE = Java Runtime Environment =

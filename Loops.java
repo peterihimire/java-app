@@ -2,31 +2,69 @@
 public class Loops {
   public static void main(String[] a)
   {
-    // // Simple While Loop
-    // int i = 1;
-    // while(i <= 4)
-    // {
-    //     System.out.println("Count " + i); // will print from 1 to 4
-    //     i++;
-    // }
-    // System.out.println("End " + i); // 5
+      // // Simple While Loop
+      // int i = 1;
 
-    // Simple while loop with an inner loop
-    int x = 1;
+      // while(i <= 4)
+      // {
+      //     System.out.println("Count " + i); // will print from 1 to 4
+      //     i++;
+      // }
+      // System.out.println("End " + i); // 5
 
-      while(x <= 7)
-      {
-        System.err.println("Day :" + x);
-        int j = 1;
+      // // Nexted while  loop with an inner loop
+      // int x = 1;
 
-        while(j<=24)
+      // while(x <= 7) // If this condition is true, this block will execute, else it will exit the below block
+      // {
+      // System.err.println("Day :" + x);
+      // int j = 1;
+
+      // while(j<=24)
+      // {
+      //     System.err.println("Time :" + j);
+      //     j++;
+      // }
+      // x++;
+      // }
+      // System.out.println("Beginning of week " + x);
+
+      // // Do-while loop - executes the block at least ones.
+      // int i = 5; // If this condition is false it will execute the block ones.
+
+      // do
+      // {
+      //     System.out.println("Count " + i);
+      //     i++;
+      // } while (i <= 4);
+
+      // // For loop 
+      // // Initialization, condition and increment
+
+      // for (int i = 1; i <= 4; i++)
+      // {
+      //     System.out.println("Count " + i);
+      // }
+
+      // // Another way to write the for loop
+      // int i = 1;
+      //     for (; i <= 4;)
+      //     {
+      //         System.out.println("Count " + i);
+      //         i++;
+      //     }
+
+      // Nexted For loop
+      // Initialization, condition and increment
+
+    for (int i = 1; i <= 7; i++)
+    {
+        System.out.println("Day " + i);
+
+        for (int j = 1; j <= 9; j++)
         {
-            System.err.println("Time :" + j);
-            j++;
+            System.out.println("Time " + (j+8) + "-" + (j+9));
         }
-        x++;
-      }
-    System.out.println("Beginning of week " + x);
-
+    }
   }
 }
